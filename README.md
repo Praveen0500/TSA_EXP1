@@ -4,8 +4,7 @@
 # Ex.No: 01A PLOT A TIME SERIES DATA
 
 # AIM:
-To Develop a python program to Plot a time series data (population/ market price of a commodity
-/temperature.
+To Develop a python program to Plot a time series data (Price of the Onion).
 # ALGORITHM:
 1. Import the required packages like pandas and matplot
 2. Read the dataset using the pandas
@@ -26,12 +25,18 @@ data['Date'] = pd.to_datetime(data['Date'])
 ```
 ```py
 plt.figure(figsize=(12, 6))
-plt.plot(data['Date'], data['Min'], label='Minimum cost')
+
+plt.plot(data['Date'].head(100), data['Min'].head(100), label='Minimum cost')
+
 plt.xlabel('Date')
 plt.ylabel('Min')
-plt.title('Cost Of Onion')
+plt.title('Cost of Onion (First 100 Data Points)')
 plt.grid(True)
+plt.legend()
+plt.xticks(rotation=45)  
+plt.tight_layout()  
 plt.show()
+
 ```
 
 
@@ -40,7 +45,7 @@ plt.show()
 
 
 # OUTPUT:
-![image](https://github.com/user-attachments/assets/d8d305f7-b2aa-4515-bace-c6a9dcc55ee2)
+![Untitled](https://github.com/user-attachments/assets/55d80c35-a9f6-479b-86d9-e6af799f60a0)
 
 
 
